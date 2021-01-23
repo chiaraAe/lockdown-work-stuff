@@ -37,7 +37,7 @@ Rails.application.configure do
   config.action_mailer.perform_caching = false
 
   # added according to setup - change to actual host when moving to production
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: 'https://lockdown-work-stuff.herokuapp.com/' }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
