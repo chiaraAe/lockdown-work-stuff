@@ -47,9 +47,19 @@
     border-radius: $spacer;
     background-color: $green;
     padding: $spacer $spacer * 3;
+    transition: all 0.3s;
 
     a {
       color: #fff;
+      text-decoration: none;
+    }
+  }
+
+  button:hover {
+    background-color: $light-green;
+
+    a {
+      color: $green;
     }
   }
 
@@ -58,4 +68,9 @@
     justify-content: space-between;
     align-items: flex-end;
   }
+}
+
+
+.card-categories {
+
 }
