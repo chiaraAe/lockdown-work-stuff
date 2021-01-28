@@ -1,16 +1,32 @@
-// Import Google fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
+// // Import Google fonts
+// @import url('https://fonts.googleapis.com/css?family=Nunito:400,700|Work+Sans:400,700&display=swap');
 
-// Define fonts for body and headers
-$body-font: "Work Sans", "Helvetica", "sans-serif";
-$headers-font: "Nunito", "Helvetica", "sans-serif";
+// // Define fonts for body and headers
+// $body-font: "Work Sans", "Helvetica", "sans-serif";
+// $headers-font: "Nunito", "Helvetica", "sans-serif";
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+// // To use a font file (.woff) uncomment following lines
+// // @font-face {
+// //   font-family: "Font Name";
+// //   src: font-url('FontFile.eot');
+// //   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
+// //        font-url('FontFile.woff') format('woff'),
+// //        font-url('FontFile.ttf') format('truetype')
+// // }
+// // $my-font: "Font Name";
+
+@font-face {
+    font-family: 'Tomato Grotesk';
+    src: url('TomatoGrotesk-Regular.eot');
+    src: url('TomatoGrotesk-Regular.eot?#iefix') format('embedded-opentype'),
+        url('TomatoGrotesk-Regular.woff2') format('woff2'),
+        url('TomatoGrotesk-Regular.woff') format('woff'),
+        url('TomatoGrotesk-Regular.ttf') format('truetype'),
+        url('TomatoGrotesk-Regular.svg#TomatoGrotesk-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+$body-font: "Tomato Grotesk", "Helvetica", "sans-serif";
+$headers-font: "Tomato Grotesk", "Helvetica", "sans-serif";
