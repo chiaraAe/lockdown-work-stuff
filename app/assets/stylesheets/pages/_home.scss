@@ -1,8 +1,24 @@
 // Specific CSS for your home-page
 
-h2 {
-  text-align: center;
-  color: $green;
-  font-size: 3rem;
-  margin: 4rem 0 2rem 0;
+body {
+  overflow-x: hidden;
+  background-color: $light-green;
 }
+
+section{
+  height: 100vh;
+  background-color: $light-green;
+  margin-bottom: 2rem;
+
+  &:nth-child(even) {
+    background-color: #fff;
+  }
+}
+
+h2 {
+  color: $green;
+  font-size: 4rem;
+  margin: 0 0 2rem 2rem;
+  padding-top: 2rem;
+}
+
