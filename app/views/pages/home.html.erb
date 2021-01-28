@@ -1,18 +1,37 @@
 <%= render 'banner' %>
 
-<h2>Hot Stuff</h2>
-
-<div class="cards">
+<section class="hot-stuff">
+  <h2>Hot Stuff</h2>
+  <div class="cards">
   <% @items.last(6).each do |item|  %>
-  <div class="card-lockdown">
-    <img src="https://source.unsplash.com/200x100/?office,desk">
-    <h4><%= item.title %></h4>
-    <h6><%= item.description %></h6>
+    <div class="card-item">
+      <img src="https://source.unsplash.com/200x100/?office,desk">
+      <h4><%= item.title %></h4>
+      <h6><%= item.description %></h6>
 
-    <div class="card-lockdown-booking">
-      <p><%= item.price %>€ per day</p>
-      <button type="button"><%= link_to "Mine!", item_path(item) %></button>
+      <div class="card-item-booking">
+        <p><%= item.price %>€ per day</p>
+        <button type="button"><%= link_to "Mine!", item_path(item) %></button>
+      </div>
     </div>
+  <% end %>
   </div>
-<% end %>
-</div>
+</section>
+
+<section class="categories">
+  <h2>Categories</h2>
+  <div class="cards">
+  <% @items.last(6).each do |item|  %>
+    <div class="card-lockdown">
+      <img src="https://source.unsplash.com/200x100/?office,desk">
+      <h4><%= item.title %></h4>
+      <h6><%= item.description %></h6>
+
+      <div class="card-lockdown-booking">
+        <p><%= item.price %>€ per day</p>
+        <button type="button"><%= link_to "Mine!", item_path(item) %></button>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</section>

@@ -1,12 +1,13 @@
 .cards {
-  width: 80%;
-  margin: 0 auto;
+  width: 70%;
+  float: right;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: $spacer * 2;
+  margin-right: 3.5rem;
 }
 
-.card-lockdown {
+.card-item {
   width: 100%;
   height: auto;
   background-color: #fff;
