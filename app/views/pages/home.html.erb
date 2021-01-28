@@ -1,2 +1,12 @@
 <%= render 'banner' %>
 
+<h1>Hot Stuff | Latest Shit</h1>
+
+<% @items.last(6).each do |item|  %>
+    <img src="https://source.unsplash.com/200x100/?office,desk">
+    <h4 class="card-title"><%= item.title %></h4>
+    <p><%= item.description %></p>
+    <p><%= item.price %></p>
+    <button type="button" class="btn btn-outline-primary"><%= link_to "More Information", item_path(item) %></button>
+    <br>
+<% end %>
