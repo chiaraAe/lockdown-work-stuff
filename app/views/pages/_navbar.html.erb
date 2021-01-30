@@ -1,5 +1,6 @@
 <div class="navbar">
-  <div><%= cl_image_tag("lockdown/logo_z18ryb", width: 141, height: 68) %></div>
+  <div><%= cl_image_tag("lockdown/logo_z18ryb", width: 141, height: 68) %> </div>
+
   <div>
     <% if user_signed_in? %>
     <%= "#{current_user[:email]}" %>
