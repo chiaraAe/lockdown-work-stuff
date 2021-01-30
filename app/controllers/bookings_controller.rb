@@ -3,8 +3,9 @@ class BookingsController < ApplicationController
 
   # Used as a Dashboard
   def index
-    @bookings = Booking.select { |booking| booking.user == User.first }
-  end
+    # @bookings = Booking.select { |booking| booking.user == User.first }
+    @bookings = Booking.select { |booking| booking.user == current_user }
+  end 
 
   # Do we need?
   def show
@@ -21,11 +22,9 @@ class BookingsController < ApplicationController
     @item = Item.find(params[:item_id])
     @booking = Booking.new(booking_params)
     @booking.item = @item
-    # Change to current_user when signin works
-    @booking.user = User.first
+    @booking.user = current_user
 
     if @booking.save!
-      # UPDATE REDIRECT
       redirect_to bookings_path
     else
       render :new
@@ -39,13 +38,11 @@ class BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
   def destroy
     @booking = Booking.find(params[:id])
-    # @item = Item.find(@booking.item_id)
-    # @booking.item = @item
     @booking.destroy
     redirect_to bookings_path
   end
