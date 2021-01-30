@@ -1,5 +1,5 @@
 <div class="navbar">
-  <div>Logo</div>
+  <div><%= cl_image_tag("lockdown/logo_z18ryb", width: 141, height: 68) %></div>
   <div>
     <% if user_signed_in? %>
     <%= "#{current_user[:email]}" %>
@@ -11,6 +11,6 @@
     <% else %>
       <%= link_to "Log in", new_user_session_path %>
     <% end %>
-    <div class="avatar"></div>
+  <div class="avatar"></div>
   </div>
 </div>
