@@ -10,7 +10,7 @@
       <h6><%= item.description %></h6>
 
       <div class="card-item-booking">
-        <p><%= item.price %>€ per day</p>
+        <p><%= item.category %> | <%= item.price %>€ per day</p>
         <button type="button"><%= link_to "Mine!", item_path(item) %></button>
       </div>
     </div>
