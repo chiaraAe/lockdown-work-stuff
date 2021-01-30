@@ -1,15 +1,15 @@
 .banner {
-  background-color: $green;
+  background-color: $bg-color;
   width: 100vw;
-  height: 400px;
+  height: 500px;
   padding: $spacer * 2;
 
   h1 {
     width: 500px;
-    color: #fff;
+    color: $main-color;
     font-size: 4.5rem;
     line-height: 1;
-    margin: 3.5rem 0 2rem 2rem;
+    margin: 5rem 0 3rem 2rem;
   }
 }
 
@@ -18,17 +18,17 @@ a.banner-btn {
 }
 
 .banner-btn {
-  color: #fff;
-  border: 1px solid #fff;
-  padding: $spacer * 2 $spacer * 6;
+  background-color: #fff;
+  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+  color: $main-color;
+  // border: 1px solid #fff;
+  padding: $spacer * 2 $spacer * 8;
   border-radius: $spacer * 3;
-  background-color: transparent;
   transition: all 0.2s;
-  margin-left: 2rem;
+  margin: 2rem;
 
   &:hover {
-    color: $green;
-    background-color: #fff;
+    box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
   }
 }
 
