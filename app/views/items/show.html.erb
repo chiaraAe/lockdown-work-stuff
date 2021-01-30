@@ -1,35 +1,47 @@
-<div class="container-item-show">
+
+<div class="card-item">
+<!-- hero image -->
+
+  <div class="img">
+    <img src="https://source.unsplash.com/300x150/?office,desk">
+  </div>
+
   <div class="row">
-
     <div class="d-flex align-items-center">
-      <div class="item-photo"><img src="https://source.unsplash.com/200x100/?office,desk"></div>
-      <div class="item-photo"><img src="https://source.unsplash.com/200x100/?office,chair"></div>
-      <div class="item-photo"><img src="https://source.unsplash.com/200x100/?office,lamp"></div>
+<!--     <div class="flex-container"> -->
+      <div class="img"><img src="https://source.unsplash.com/200x100/?office,desk"></div>
+      <div class="img"><img src="https://source.unsplash.com/200x100/?office,chair"></div>
+      <div class="img"><img src="https://source.unsplash.com/200x100/?office,lamp"></div>
+      <div class="img"><img src="https://source.unsplash.com/200x100/?office,lamp"></div>
     </div>
+  </div>
 
-    <div class="col-12 col-lg-8">
-        <div>
-          <div>
-              <div class="avatar">
+  <div>
+    <div class="avatar">
 <!--                 <p>email address goes here</p> -->
+  </div>
+
+    <div class="container py-3">
+      <div class="row">
+         <div class="col-md-8">
+
+          <div>
+            <h4><%= @item.title %></h4>
+              <h6><%= @item.description %></h6>
+              <p>€<%= @item.price %> per day</p>
+            </div>
           </div>
-          <h1><%= @item.title %></h1>
-            <p><%= @item.description %></p>
-            <p>€<%= @item.price %> per day</p>
+
+        <div class="col-md-4">
+          <div>
+            <h6>How long do you need it?</h6>
+            <p>We calculate the price based on the duration</p>
+            <a href="#" class="button">check availability</a>
+          </div>
         </div>
       </div>
     </div>
-
-  <div class="col-12 col-lg-4">
-    <div>
-      <h2>How long do you need it?</h2>
-      <p>We calculate the price based on the duration</p>
-        <div>
-          <p>start date</p>
-          <p>end date</p>
-        </div>
-      <h3>check availability</h3>
-    </div>
-   </div>
- </div>
+  </div>
 </div>
+
+
