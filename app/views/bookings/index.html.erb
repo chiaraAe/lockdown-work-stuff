@@ -1,0 +1,7 @@
+<h1>test</h1>
+
+<% @bookings.each do |booking|  %>
+    <p><%= booking.item_id %></p>
+    <p><%= booking.starting_date %></p>
+    <p><%= booking.end_date %></p>
+<% end %>
