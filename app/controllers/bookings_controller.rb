@@ -1,10 +1,12 @@
 class BookingsController < ApplicationController
+  before_action :authenticate_user!
+
   # Used as a Dashboard
   def index
     @bookings = Booking.select { |booking| booking.user == User.first }
   end
 
-  # Do we need? 
+  # Do we need?
   def show
     @booking = Booking.find(params[:id])
   end
@@ -27,7 +29,7 @@ class BookingsController < ApplicationController
       redirect_to bookings_path
     else
       render :new
-    end 
+    end
   end
 
   def edit
@@ -50,7 +52,7 @@ class BookingsController < ApplicationController
 
     private
 
-  
+
   def booking_params
     params.require(:booking).permit(:starting_date, :end_date)
   end
