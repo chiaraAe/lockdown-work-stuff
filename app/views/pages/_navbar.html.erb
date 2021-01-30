@@ -1,7 +1,16 @@
 <div class="navbar">
   <div><%= cl_image_tag("lockdown/logo_z18ryb", width: 141, height: 68) %></div>
+  <div>
+    <% if user_signed_in? %>
+    <%= "#{current_user[:email]}" %>
+    <% end %>
+  </div>
   <div class="navbar-right">
-    <p>Sign in</p>
-    <div class="avatar"></div>
+    <% if user_signed_in? %>
+      <%= link_to "Log out", destroy_user_session_path, :method=>'delete'%>
+    <% else %>
+      <%= link_to "Log in", new_user_session_path %>
+    <% end %>
+  <div class="avatar"></div>
   </div>
 </div>
