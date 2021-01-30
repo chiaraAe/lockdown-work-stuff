@@ -1,8 +1,10 @@
 class BookingsController < ApplicationController
+  # Used as a Dashboard
   def index
-    @bookings = Booking.all
+    @bookings = Booking.select { |booking| booking.user == User.first }
   end
 
+  # Do we need? 
   def show
     @booking = Booking.find(params[:id])
   end
@@ -12,15 +14,17 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+
   def create
     @item = Item.find(params[:item_id])
     @booking = Booking.new(booking_params)
     @booking.item = @item
-    @booking.user = @item.user
+    # Change to current_user when signin works
+    @booking.user = User.first
 
-    if @booking.save
+    if @booking.save!
       # UPDATE REDIRECT
-      redirect_to item_bookings_path
+      redirect_to bookings_path
     else
       render :new
     end 
@@ -38,6 +42,8 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
+    # @item = Item.find(@booking.item_id)
+    # @booking.item = @item
     @booking.destroy
     redirect_to bookings_path
   end
