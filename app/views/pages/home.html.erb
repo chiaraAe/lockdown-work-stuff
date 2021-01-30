@@ -1,5 +1,6 @@
 <%= render 'banner' %>
 
+<section>
 <h1>Hot Stuff | Latest Shit</h1>
 
 <% @items.last(6).each do |item|  %>
@@ -29,7 +30,7 @@
   </div>
 </section>
 
-<section class="categories">
+<section>
   <h2>Categories</h2>
   <div class="cards">
   <% @items.last(6).each do |item|  %>
@@ -47,3 +48,6 @@
   </div>
 </section>
 
+<footer>
+  <h2>Want to be a part of <br>our amazing community?</h2>
+</footer>
