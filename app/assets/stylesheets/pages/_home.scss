@@ -12,6 +12,7 @@ section{
 
   &:nth-child(even) {
     background-color: $bg-color;
+    height: 60vh;
   }
 }
 
@@ -24,5 +25,6 @@ h2 {
   font-size: 4rem;
   margin: 0 0 2rem 2rem;
   padding-top: 2rem;
+  padding-left: $spacer * 2;
 }
 
