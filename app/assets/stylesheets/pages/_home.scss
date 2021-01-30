@@ -2,21 +2,25 @@
 
 body {
   overflow-x: hidden;
-  background-color: $light-green;
+  // background-color: #fff;
 }
 
 section{
   height: 100vh;
-  background-color: $light-green;
+  // background-color: $bg-color;
   margin-bottom: 2rem;
 
   &:nth-child(even) {
-    background-color: #fff;
+    background-color: $bg-color;
   }
 }
 
+footer {
+  // background-color: $ight-greenl;
+}
+
 h2 {
-  color: $green;
+  color: $main-color;
   font-size: 4rem;
   margin: 0 0 2rem 2rem;
   padding-top: 2rem;

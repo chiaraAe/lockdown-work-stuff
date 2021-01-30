@@ -11,7 +11,7 @@
   width: 100%;
   height: auto;
   background-color: #fff;
-  box-shadow: 0px 1px 4px #E5E9F2;
+  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
   padding: 1rem;
   border-radius: $spacer;
   margin: 0 1rem 1rem 0;
@@ -23,7 +23,7 @@
   }
 
   h4, h6 {
-    color: $dark-grey;
+    color: $text-color;
   }
 
   h6 {
@@ -37,7 +37,7 @@
   }
 
   p {
-    color: $light-grey;
+    color: $text-info-color;
     font-size: 0.85rem;
     margin: 0;
   }
@@ -45,12 +45,20 @@
   button {
     border: none;
     border-radius: $spacer;
-    background-color: $green;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
     padding: $spacer $spacer * 3;
+    transition: all 0.3s;
 
     a {
-      color: #fff;
+      color: $main-color;
+      text-decoration: none;
     }
+  }
+
+  button:hover {
+    // background-color: $light-green;
+    box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
   }
 
   &-booking {
@@ -58,4 +66,9 @@
     justify-content: space-between;
     align-items: flex-end;
   }
+}
+
+
+.card-categories {
+
 }
