@@ -1,7 +1,11 @@
 .banner {
   background-color: $bg-color;
+  background: url('https://res.cloudinary.com/dwbun34na/image/upload/v1612004586/lockdown/banner-img_ajy1ty.svg') $bg-color;
+  // background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right bottom;
   width: 100vw;
-  height: 500px;
+  height: 580px;
   padding: $spacer * 2;
 
   h1 {
