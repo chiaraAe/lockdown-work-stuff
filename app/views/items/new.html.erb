@@ -1,1 +1,11 @@
-<h1>New View</h1>
+<div class="container">
+  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <h1>Add your own item for rent</h1>
+    <%= simple_form_for @item do |f| %>
+      <%= f.input :title %>
+      <%= f.input :description %>
+      <%= f.input :price %>
+      <%= f.button :submit, "save", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
