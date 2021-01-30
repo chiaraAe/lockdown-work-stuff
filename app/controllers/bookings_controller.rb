@@ -8,13 +8,22 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @item = Item.find(params[:item_id])
     @booking = Booking.new
   end
 
   def create
+    @item = Item.find(params[:item_id])
     @booking = Booking.new(booking_params)
-    @booking.save
-    redirect_to booking_path(@booking)
+    @booking.item = @item
+    @booking.user = @item.user
+
+    if @booking.save
+      # UPDATE REDIRECT
+      redirect_to item_bookings_path
+    else
+      render :new
+    end 
   end
 
   def edit
@@ -35,6 +44,7 @@ class BookingsController < ApplicationController
 
     private
 
+  
   def booking_params
     params.require(:booking).permit(:starting_date, :end_date)
   end
