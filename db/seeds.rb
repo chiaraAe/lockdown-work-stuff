@@ -40,9 +40,9 @@ users = [user_1, user_2, user_3, user_4]
 
 puts "Creating items..."
 
-10.times do 
+10.times do
     item = Item.create!(
-      category: ['Lamps','Office Tables', 'Office Chairs','Bookshelfs', 'Pets', 'Phone Booth'].sample,
+      category: Item::CATEGORIES.sample,
       title: Faker::Commerce.product_name,
       description: Faker::ChuckNorris.fact,
       price: Faker::Commerce.price,
