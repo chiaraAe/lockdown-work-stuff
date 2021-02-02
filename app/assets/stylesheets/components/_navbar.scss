@@ -24,9 +24,9 @@
 
   &-btn {
     margin-right: 3rem;
-    background-color: $main-color;
+    background-color: #fffr;
     box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
-    color: #fff;
+    color: $main-color;
     padding: $spacer $spacer * 4;
     border-radius: $spacer * 3;
     transition: all 0.2s;
@@ -39,7 +39,7 @@
 
 a.navbar-btn {
   text-decoration: none;
-  color: #fff;
+  color: $main-color;
 }
 
 // .navbar-lewagon .navbar-collapse {

@@ -1,0 +1,45 @@
+.form-group label {
+  font-size: 14px;
+  color: $text-color;
+}
+
+.form-group input {
+  border: none;
+  border-bottom: 1px solid $main-color;
+}
+
+.form-control[readonly] {
+  background-color: #fff;
+}
+
+.booking-form {
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+  border-radius: $spacer;
+
+  h4 {
+    color: $main-color;
+    margin-bottom: 2rem;
+  }
+
+  &-btn {
+    border: none;
+    border-radius: $spacer;
+    background-color: #fff;
+    box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+    padding: $spacer $spacer * 3;
+    transition: all 0.3s;
+    color: $main-color;
+
+    a {
+      color: $main-color;
+      text-decoration: none;
+    }
+
+    &:hover {
+      box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
+      color: $main-color;
+    }
+  }
+}

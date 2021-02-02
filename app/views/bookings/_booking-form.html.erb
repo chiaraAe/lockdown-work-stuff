@@ -1,12 +1,10 @@
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Booking</h2>
+<div class="booking-form">
+  <h4>Book your stuff</h4>
 
-    <%= simple_form_for [ @item, @booking ] do |f| %>
-      <%= f.input :starting_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-      <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
-      <%= f.button :submit, "Go", class: "btn btn-primary" %>
-    <% end %>
-
-  </div>
+  <%= simple_form_for [ @item, @booking ] do |f| %>
+    <%= f.input :starting_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.input :end_date, as: :string, required: true, input_html: {class: "datepicker"} %>
+    <%= f.button :submit, "Book now", class: "booking-form-btn" %>
+  <% end %>
 </div>
+
