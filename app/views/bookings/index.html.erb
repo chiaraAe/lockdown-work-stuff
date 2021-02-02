@@ -1,28 +1,71 @@
-<div style="margin-left: 30px;">
+<div class="dashboard-container">
+  <div>
     <h1> Dashboard </h1>
     <p> Hi <%= current_user.email %> </p>
+  </div>
 </div>
 
-  <div class="card-header">
-    YOUR CURRENT BOOKINGS
-    <div>
-        <%= link_to "Look for more stuff", items_path %>
+
+<section>
+  <div class="dashboard-container">
+
+    <div class="dashboard-header">
+      YOUR CURRENT BOOKINGS
+      <div>
+          <%= link_to "Look for more stuff", items_path %>
+      </div>
     </div>
-    
+
+    <div class="cards">
+      <% @bookings.each do |booking|  %>
+        <div class="card-item">
+          <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
+          <h6><%= booking.item.description %>.</h6>
+          <h6><%= booking.item.id %>.</h6>         
+          <p> Booking from <%= booking.starting_date %>  to <%= booking.end_date %></p>
+          <br>
+          <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
+
+          <button type="button"><%= link_to "Delete Booking!", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }  %></button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="dashboard-container">
+    <div class="dashboard-header">
+      MY ITEMS
+      <div>
+        <%= link_to "Rent more stuff", new_item_path %>
+     </div>
+
+    <div class="cards">
+      <% @items.each do |item|  %>
+        <div class="card-item">
+          <h5><%= item.category %> : <%= item.title %></h5>
+          <h6><%= item.description %>.</h6>
+          <h6><%= item.id %></h6>
+          
+          <% item.bookings.each do |booking| %>
+            <% if booking_availability(booking.starting_date, booking.end_date) == true %>
+                <i class="fas fa-circle available"> available</i>
+            <% else %> 
+                <i class="fas fa-circle not-available"> not available</i>
+            <% end %>
+          <% end %>
+
+
+        </div>
+      <% end %>
+    </div>
+
+
+    </div>
   </div>
 
-  <div class="cards" style="float: left; margin-left: 275px; margin-top: 40px;">
-    <% @bookings.each do |booking|  %>
-      <div class="card-item">
-        <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
-        <h6><%= booking.item.description %>.</h6>
-        <p> Booking from <%= booking.starting_date %>  to <%= booking.end_date %></p>
-        <br>
-        <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
+</section>
 
-        <button type="button"><%= link_to "Delete Booking!", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }  %></button>
-     </div>
-    <% end %>
-</div>
 
 

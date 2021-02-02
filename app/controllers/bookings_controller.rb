@@ -3,7 +3,7 @@ class BookingsController < ApplicationController
 
   # Used as a Dashboard
   def index
-    # @bookings = Booking.select { |booking| booking.user == User.first }
+    @items = Item.select { |item| item.user == current_user}
     @bookings = Booking.select { |booking| booking.user == current_user }
   end 
 
@@ -24,6 +24,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save!
+      @item.status = false
+      @item.save!
       redirect_to bookings_path
     else
       render :new
