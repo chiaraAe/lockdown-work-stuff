@@ -4,7 +4,7 @@ module ApplicationHelper
     current_date = Date.today
 
     if attrs == nil
-      true
+      false
     elsif current_date.between?(starting_date, end_date)
       false
     else 
