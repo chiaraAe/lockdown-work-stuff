@@ -20,9 +20,8 @@
       <% @bookings.each do |booking|  %>
         <div class="card-item">
           <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
-          <h6><%= booking.item.description %>.</h6>
-          <h6><%= booking.item.id %>.</h6>         
-          <p> Booking from <%= booking.starting_date.strftime('%D') %>  to <%= booking.end_date.strftime('%D') %></p>
+          <h6><%= booking.item.description %>.</h6>    
+          <p> Booking from <%= booking.starting_date.strftime('%d/%m/%y') %>  to <%= booking.end_date.strftime('%d/%m/%y') %></p>
           <br>
           <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
 
@@ -38,7 +37,7 @@
     <div class="dashboard-header">
       MY ITEMS
       <div>
-        <%= link_to "Rent more stuff", new_item_path %>
+        <%= link_to "Rent out stuff", new_item_path %>
      </div>
 
     <div class="cards">
@@ -46,16 +45,12 @@
         <div class="card-item">
           <h5><%= item.category %> : <%= item.title %></h5>
           <h6><%= item.description %>.</h6>
-          <h6><%= item.id %></h6>
-          
-          <% item.bookings.each do |booking| %>
-            <% if booking_availability(booking.starting_date, booking.end_date) == true %>
-                <i class="fas fa-circle available"> available</i>
-            <% else %> 
-                <i class="fas fa-circle not-available"> not available</i>
-            <% end %>
-          <% end %>
 
+            <% if currently_booked(item) == true %>
+              <i class="fas fa-dollar-sign not-available"> Item booked | Making $ </i>
+            <% elsif currently_booked(item) == false  %>
+              <i class="fas fa-circle available"> Currently not booked </i>
+            <% end %>
 
         </div>
       <% end %>

@@ -5,12 +5,13 @@ class BookingsController < ApplicationController
   def index
     @items = Item.select { |item| item.user == current_user}
     @bookings = Booking.select { |booking| booking.user == current_user }
+
   end 
 
   # Do we need?
-  def show
-    @booking = Booking.find(params[:id])
-  end
+  # def show
+  #   @booking = Booking.find(params[:id])
+  # end
 
   def new
     @item = Item.find(params[:item_id])
