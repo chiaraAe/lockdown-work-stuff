@@ -1,7 +1,6 @@
-<div class="container">
-  <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-    <h2>Booking</h2>
-
+<div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+  <%= render 'bookings/booking-form' %>
+</div>
 
     <div id='flat-booking-dates' data-unavailable="<%= @item.unavailable_dates.to_json %>">
       <%= simple_form_for [ @item, @booking ] do |f| %>
@@ -12,3 +11,4 @@
     </div>
   </div>
 </div>
+

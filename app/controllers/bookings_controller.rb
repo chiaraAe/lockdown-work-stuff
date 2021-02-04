@@ -26,8 +26,8 @@ class BookingsController < ApplicationController
     if @booking.save
       redirect_to bookings_path
     else
-      flash[:alert] = 'DATES ALREADY BOOKED!'
-      redirect_to new_item_booking_path
+      flash[:alert] = "Dates already booked"
+      redirect_to item_path(@item)
     end
   end
 
