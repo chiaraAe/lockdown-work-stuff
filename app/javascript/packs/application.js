@@ -35,3 +35,9 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   flatpickr('#datePicker2');
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
