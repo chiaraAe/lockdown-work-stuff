@@ -23,7 +23,7 @@
         <div class="card-item">
           <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
           <h6><%= booking.item.description %>.</h6>
-          <p> Booking from <%= booking.starting_date %>  to <%= booking.end_date %></p>
+          <p> Booking from <%= booking.starting_date.to_datetime.strftime('%d/%m/%Y')  %>  to <%= booking.end_date.to_datetime.strftime('%d/%m/%Y')  %></p>
           <br>
           <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
 
