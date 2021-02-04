@@ -22,7 +22,7 @@
       <% @bookings.each do |booking|  %>
         <div class="card-item">
           <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
-          <h6><%= booking.item.description %>.</h6>    
+          <h6><%= booking.item.description %>.</h6>
           <p> Booking from <%= booking.starting_date.strftime('%d/%m/%y') %>  to <%= booking.end_date.strftime('%d/%m/%y') %></p>
           <br>
           <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
@@ -53,7 +53,9 @@
             <% elsif currently_booked(item) == false  %>
               <i class="fas fa-circle available"> Currently not booked </i>
             <% end %>
-
+            <br>
+            <button type="button"><%= link_to "Edit!", edit_item_path(item) %></button>
+            <button type="button"><%= link_to "Delete Item!", item_path(item), method: :delete, data: { confirm: "Are you sure?" }  %></button>
         </div>
       <% end %>
     </div>
