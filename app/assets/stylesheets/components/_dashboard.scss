@@ -1,0 +1,28 @@
+.dashboard-container {
+  margin-top: 25px;
+  margin-left: 45px;
+}
+
+.dashboard-header {
+  margin-top: 40px;
+  display: block;
+}
+
+section{
+  height: auto;
+  // background-color: $bg-color;
+  margin-bottom: 2rem;
+
+  &:nth-child(even) {
+    background-color: $bg-color;
+    height: 60vh;
+  }
+}
+
+.not-available {
+  color: red;
+}
+
+.available {
+  color: green;
+}
