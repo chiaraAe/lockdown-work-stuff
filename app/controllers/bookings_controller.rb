@@ -23,7 +23,7 @@ class BookingsController < ApplicationController
     @booking.item = @item
     @booking.user = current_user
 
-    if @booking.save
+    if @booking.save!
       redirect_to bookings_path
     else
       flash[:alert] = "Dates already booked"
