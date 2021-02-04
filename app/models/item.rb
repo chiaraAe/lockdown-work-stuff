@@ -6,6 +6,8 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   has_many_attached :photos
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 
   def unavailable_dates
     bookings.pluck(:starting_date, :end_date).map do |range|
