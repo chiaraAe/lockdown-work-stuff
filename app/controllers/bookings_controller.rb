@@ -3,14 +3,14 @@ class BookingsController < ApplicationController
 
   # Used as a Dashboard
   def index
-    # @bookings = Booking.select { |booking| booking.user == User.first }
+    @items = Item.select { |item| item.user == current_user}
     @bookings = Booking.select { |booking| booking.user == current_user }
   end 
 
   # Do we need?
-  def show
-    @booking = Booking.find(params[:id])
-  end
+  # def show
+  #   @booking = Booking.find(params[:id])
+  # end
 
   def new
     @item = Item.find(params[:item_id])
@@ -23,10 +23,11 @@ class BookingsController < ApplicationController
     @booking.item = @item
     @booking.user = current_user
 
-    if @booking.save!
+    if @booking.save
       redirect_to bookings_path
     else
-      render :new
+      flash[:alert] = "Dates already booked"
+      redirect_to item_path(@item)
     end
   end
 
