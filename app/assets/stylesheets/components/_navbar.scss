@@ -3,7 +3,12 @@
   justify-content: space-between;
   align-items: center;
   background: #fff;
-  padding: 1rem 3.5rem;
+  padding: 1rem 3rem;
+
+  a {
+    color: $main-color;
+    text-decoration: none;
+  }
 
   p {
     padding: 0;
@@ -14,8 +19,27 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100px;
+    width: auto;
   }
+
+  &-btn {
+    margin-right: 3rem;
+    background-color: #fffr;
+    box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+    color: $main-color;
+    padding: $spacer $spacer * 4;
+    border-radius: $spacer * 3;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
+    }
+  }
+}
+
+a.navbar-btn {
+  text-decoration: none;
+  color: $main-color;
 }
 
 // .navbar-lewagon .navbar-collapse {

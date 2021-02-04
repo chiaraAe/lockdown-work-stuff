@@ -1,9 +1,13 @@
 <div class="navbar">
-  <div> <%= cl_image_tag("lockdown/logo_z18ryb") %></div>
+  <div>
+    <%= link_to root_path do %>
+     <%= cl_image_tag("lockdown/logo_z18ryb") %>
+    <% end %>
+  </div>
 
   <div>
     <% if user_signed_in? %>
-    <%= "#{current_user[:email]}" %>
+    <%= link_to "Rent your stuff", items_path, class: "navbar-btn" %>
     <% end %>
   </div>
   <div class="navbar-right">
