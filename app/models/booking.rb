@@ -3,6 +3,7 @@ class Booking < ApplicationRecord
   belongs_to :item
 
   validates :starting_date, :end_date, presence: true
+
   validate  :validate_dates
 
   def data_ranges
