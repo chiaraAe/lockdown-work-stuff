@@ -15,9 +15,9 @@
 
 <div class="container py-5 mb-10">
   <div class="row">
-     <div class="col-md-8">
-
-      <div>
+     <div class="col-md-8">      
+     
+     <div>
         <h4><%= @item.title %></h4>
           <h6><%= @item.description %></h6>
           <p>€<%= @item.price %> per day</p>
@@ -27,10 +27,23 @@
     <div class="col-md-4">
       <div>
        <!--  <h6>How long do you need it?</h6>
-        <p>We calculate the price based on the duration</p> -->
+        <p> We calculate the price based on the duration</p> -->
         <%= render 'bookings/booking-form' %>
       </div>
     </div>
   </div>
+
+  <% if @reviews.exists? %>
+    <div>
+      <h4> Review </h4>
+        <% @reviews.each do |review|  %>
+          <%= review.content %></h4>
+        <% end %>
+        </div>
+    </div>
+  <% end %>
+
+
 </div>
+
 
