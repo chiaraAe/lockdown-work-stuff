@@ -8,6 +8,7 @@
   <div>
     <% if user_signed_in? %>
     <%= link_to "Rent your stuff", new_item_path, class: "navbar-btn" %>
+    <%= link_to "Go to dashboard", bookings_path, class: "navbar-btn" %>
     <% end %>
   </div>
   <div class="navbar-right">
