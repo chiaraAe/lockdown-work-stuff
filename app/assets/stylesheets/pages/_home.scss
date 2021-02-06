@@ -25,13 +25,6 @@ section.hot-stuff {
     background-color: $bg-color;
     height: 60vh;
   }
-  h2 {
-  color: $main-color;
-  font-size: 4rem;
-  margin: 0 0 2rem 2rem;
-  padding-top: 2rem;
-  padding-left: $spacer * 2;
-  }
 }
 
 section.categories {
@@ -43,17 +36,16 @@ section.categories {
     background-color: $bg-color;
     height: 60vh;
   }
-  h2 {
-  color: $main-color;
-  font-size: 4rem;
-  margin: 0 0 2rem 2rem;
-  padding-top: 2rem;
-  padding-left: $spacer * 2;
-  }
 }
 
 footer {
   // background-color: $ight-greenl;
 }
 
-
+h2 {
+color: $main-color;
+font-size: 4rem;
+margin: 0 0 2rem 2rem;
+padding-top: 2rem;
+padding-left: $spacer * 2;
+}
