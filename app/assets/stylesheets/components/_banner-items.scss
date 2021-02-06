@@ -5,6 +5,14 @@
   width: 100vw;
   height: 500px;
   padding: $spacer * 2;
+
+  h1 {
+    width: 500px;
+    color: $main-color;
+    font-size: 4.5rem;
+    line-height: 1;
+    margin: 5rem 0 3rem 2rem;
+  }
 }
 
 .thumbnails-img {

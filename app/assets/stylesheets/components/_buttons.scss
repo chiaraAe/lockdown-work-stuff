@@ -1,0 +1,19 @@
+.btn-more {
+  background-color: $main-color;
+  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+  color: #fff;
+  padding: $spacer * 2 $spacer * 2;
+  border-radius: $spacer * 3;
+  transition: all 0.2s;
+  margin: 2rem 0;
+  text-align: center;
+
+  &:hover {
+    box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
+    color: #fff;
+  }
+}
+
+a.btn-more {
+  text-decoration: none;
+}

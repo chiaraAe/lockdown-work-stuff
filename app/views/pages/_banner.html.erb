@@ -2,7 +2,6 @@
   <div class="banner">
     <div class="container-lockdown">
       <h1>Why buy when you can share?</h1>
-      <%= link_to "Check out stuff!", items_path, class:"banner-btn" %>
       <%= form_tag root_path, class:"banner-search-form", method: :get do %>
       <%= text_field_tag :query,
         params[:query],

@@ -9,7 +9,9 @@
   <div class="cards">
   <% @search_result.each do |item|  %>
     <div class="card-item">
-      <img src="https://source.unsplash.com/200x100/?office,desk">
+      <%= link_to item_path(item) do %>
+      <%= cl_image_tag item.photos.first.key, crop: :fill, class: "card-item" %>
+      <% end %>
       <h4><%= item.title %></h4>
       <h6><%= item.description %></h6>
 
@@ -25,9 +27,15 @@
 <section class="hot-stuff">
   <h2>Hot Stuff</h2>
   <div class="cards">
-  <% @items.last(6).each do |item|  %>
+  <% @items.last(3).each do |item|  %>
     <div class="card-item">
-      <img src="https://source.unsplash.com/200x100/?office,desk">
+      <% if item.photos.attached? %>
+        <% item.photos.each do |photo|  %>
+          <%= link_to item_path(item) do %>
+          <%= cl_image_tag photo.key, crop: :fill, class: "card-item" %>
+          <% end %>
+        <% end %>
+      <% end %>
       <h4><%= item.title %></h4>
       <h6><%= item.description %></h6>
 
@@ -37,6 +45,7 @@
       </div>
     </div>
   <% end %>
+  <%= link_to "More stuff", items_path, class:"btn-more" %>
   </div>
 </section>
 

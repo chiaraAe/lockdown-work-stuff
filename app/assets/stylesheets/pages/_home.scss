@@ -15,20 +15,19 @@ section.search-result {
   margin-bottom: 2rem;
 
   &:nth-child(even) {
-    background-color: $bg-color;
-    height: 60vh;
+    // background-color: $bg-color;
+    // height: 60vh;
   }
 }
 
 section.hot-stuff {
   height: 100vh;
-  // background-color: $bg-color;
   margin-bottom: 2rem;
 
-  &:nth-child(even) {
-    background-color: $bg-color;
-    height: 60vh;
-  }
+  // &:nth-child(even) {
+  //   background-color: $bg-color;
+  //   height: 60vh;
+  // }
 }
 
 section.categories {
@@ -36,10 +35,10 @@ section.categories {
   // background-color: $bg-color;
   margin-bottom: 2rem;
 
-  &:nth-child(even) {
-    background-color: $bg-color;
-    height: 60vh;
-  }
+  // &:nth-child(even) {
+  //   background-color: $bg-color;
+  //   height: 60vh;
+  // }
 }
 
 footer {

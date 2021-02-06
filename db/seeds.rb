@@ -41,14 +41,14 @@ users = [user_1, user_2, user_3, user_4]
 
 puts "Creating items..."
 
-10.times do
-    item = Item.create!(
-      category: Item::CATEGORIES.sample,
-      title: Faker::Commerce.product_name,
-      description: Faker::ChuckNorris.fact,
-      price: Faker::Commerce.price,
-      user_id: users.sample.id,
-    )
-    puts "item #{item.id} was created in #{item.category}"
-end
+# 10.times do
+#     item = Item.create!(
+#       category: Item::CATEGORIES.sample,
+#       title: Faker::Commerce.product_name,
+#       description: Faker::ChuckNorris.fact,
+#       price: Faker::Commerce.price,
+#       user_id: users.sample.id,
+#     )
+#     puts "item #{item.id} was created in #{item.category}"
+# end
 puts "Finished!"
