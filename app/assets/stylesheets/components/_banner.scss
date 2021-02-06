@@ -36,12 +36,52 @@ a.banner-btn {
 }
 
 .banner-search-form {
-  background-color: #fff;
-  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+  // background-color: #fff;
+  // box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
   color: $main-color;
   padding: $spacer * 2 $spacer * 1;
   border-radius: $spacer * 3;
   transition: all 0.2s;
   margin: 2rem;
-  width: 250px;
+  // width: 250px;
+
+  input[type="text"] {
+    border: none;
+    border-radius: $spacer * 3;
+    // border-bottom: 1px solid $main-color;
+    box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+    background-color: #fff;
+    color: $main-color;
+    padding: $spacer * 2 $spacer * 4;
+    width: 480px;
+    height: 60px;
+  }
+
+  input[type="submit"] {
+    border: none;
+    background-color: $main-color;
+    box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+    color: #fff;
+    padding: $spacer * 2 $spacer * 8;
+    border-radius: $spacer * 3;
+    transition: all 0.2s;
+    margin-top: 1rem;
+
+    &:hover {
+      box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
+    }
+  }
+
+  ::placeholder {
+      color: $main-color;
+    }
 }
+
+
+
+
+
+
+
+
+
