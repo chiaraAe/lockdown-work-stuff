@@ -10,6 +10,8 @@
 <% @items.each do |item|  %>
   <div class="card-item">
     <img src="https://source.unsplash.com/200x100/?office,desk">
+ <!--    <%= cl_image_tag @item.photos.first.key, crop: :fill,  height: 200, width: 800 %> -->
+
     <h4><%= item.title %></h4>
     <h6><%= item.description %></h6>
 
