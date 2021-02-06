@@ -26,13 +26,16 @@
           <p> Booking from <%= booking.starting_date  %>  to <%= booking.end_date %></p>
           <br>
           <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
-
+          <button type="button"><%= link_to "Review!", new_booking_review_path(booking) %></button>
           <button type="button"><%= link_to "Delete Booking!", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }  %></button>
         </div>
       <% end %>
     </div>
   </div>
 </section>
+
+
+
 
 <section>
   <div class="dashboard-container">
