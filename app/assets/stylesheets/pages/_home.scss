@@ -5,7 +5,7 @@ body {
   // background-color: #fff;
 }
 
-section{
+section.search-result {
   height: 100vh;
   // background-color: $bg-color;
   margin-bottom: 2rem;
@@ -16,15 +16,44 @@ section{
   }
 }
 
-footer {
-  // background-color: $ight-greenl;
-}
+section.hot-stuff {
+  height: 100vh;
+  // background-color: $bg-color;
+  margin-bottom: 2rem;
 
-h2 {
+  &:nth-child(even) {
+    background-color: $bg-color;
+    height: 60vh;
+  }
+  h2 {
   color: $main-color;
   font-size: 4rem;
   margin: 0 0 2rem 2rem;
   padding-top: 2rem;
   padding-left: $spacer * 2;
+  }
 }
+
+section.categories {
+  height: 100vh;
+  // background-color: $bg-color;
+  margin-bottom: 2rem;
+
+  &:nth-child(even) {
+    background-color: $bg-color;
+    height: 60vh;
+  }
+  h2 {
+  color: $main-color;
+  font-size: 4rem;
+  margin: 0 0 2rem 2rem;
+  padding-top: 2rem;
+  padding-left: $spacer * 2;
+  }
+}
+
+footer {
+  // background-color: $ight-greenl;
+}
+
 

@@ -34,3 +34,14 @@ a.banner-btn {
     box-shadow: inset 4px 4px 8px rgba(76, 70, 233, 0.2);
   }
 }
+
+.banner-search-form {
+  background-color: #fff;
+  box-shadow: 4px 4px 8px rgba(76, 70, 233, 0.2);
+  color: $main-color;
+  padding: $spacer * 2 $spacer * 1;
+  border-radius: $spacer * 3;
+  transition: all 0.2s;
+  margin: 2rem;
+  width: 250px;
+}
