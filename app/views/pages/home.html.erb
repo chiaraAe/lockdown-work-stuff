@@ -1,5 +1,27 @@
 <%= render 'banner' %>
 
+<section class="sorry" style="display: <%= @show_sorry %>;">
+  <h2><%= @sorry %></h2>
+</section>
+
+<section class="search-result" style="display: <%= @show_result_sec %>;">
+  <h2><%= @text %></h2>
+  <div class="cards">
+  <% @search_result.each do |item|  %>
+    <div class="card-item">
+      <img src="https://source.unsplash.com/200x100/?office,desk">
+      <h4><%= item.title %></h4>
+      <h6><%= item.description %></h6>
+
+      <div class="card-item-booking">
+        <p><%= item.category %> | <%= item.price %>€ per day</p>
+        <button type="button"><%= link_to "Mine!", item_path(item) %></button>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</section>
+
 <section class="hot-stuff">
   <h2>Hot Stuff</h2>
   <div class="cards">
