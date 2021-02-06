@@ -6,69 +6,57 @@
 </div>
 
 
-<section>
-  <div class="dashboard-container">
+<div class="bookings-container">
+  <div class="my-bookings">
+    <h4>My Bookings</h4>
+    <div><%= link_to "Look for more stuff", items_path %></div>
 
-    <div class="dashboard-header">
-      YOUR CURRENT BOOKINGS
-      <div>
-          <%= link_to "Look for more stuff", items_path %>
+    <div class="booking-cards">
+    <% @bookings.each do |booking|  %>
+      <div class="card-item">
+        <% booking.item.photos.each do |photo|  %>
+          <%= cl_image_tag photo.key, crop: :fill, class: "card-item" %>
+        <% end %>
+        <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
+        <h6><%= booking.item.description %>.</h6>
+        <p> Booking from <%= booking.starting_date  %>  to <%= booking.end_date %></p>
+        <br>
+        <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
+        <button type="button"><%= link_to "Review!", new_booking_review_path(booking) %></button>
+        <button type="button"><%= link_to "Delete Booking!", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }  %></button>
       </div>
-    </div>
-
+    <% end %>
+  </div>
   </div>
 
-    <div class="cards">
-      <% @bookings.each do |booking|  %>
-        <div class="card-item">
-          <%= cl_image_tag booking.item.photos.first.key %>
-          <h5><%= booking.item.category %> : <%= booking.item.title %></h5>
-          <h6><%= booking.item.description %>.</h6>
-          <p> Booking from <%= booking.starting_date  %>  to <%= booking.end_date %></p>
+  <div class="my-items">
+    <div>
+      <h4>My Items</h4>
+      <%= link_to "Rent out stuff", new_item_path %>
+    </div>
+
+    <div class="booking-cards">
+    <% @items.each do |item|  %>
+      <div class="card-item">
+        <% item.photos.each do |photo|  %>
+          <%= cl_image_tag photo.key, crop: :fill, class: "card-item" %>
+        <% end %>
+        <h5><%= item.category %> : <%= item.title %></h5>
+        <h6><%= item.description %>.</h6>
+
+          <% if currently_booked(item) == true %>
+            <i class="fas fa-dollar-sign not-available"> Item booked | Making $ </i>
+          <% elsif currently_booked(item) == false  %>
+            <i class="fas fa-circle available"> Currently not booked </i>
+          <% end %>
           <br>
-          <button type="button"><%= link_to "Edit!", edit_booking_path(booking) %></button>
-          <button type="button"><%= link_to "Review!", new_booking_review_path(booking) %></button>
-          <button type="button"><%= link_to "Delete Booking!", booking_path(booking), method: :delete, data: { confirm: "Are you sure?" }  %></button>
-        </div>
-      <% end %>
-    </div>
+          <button type="button"><%= link_to "Edit!", edit_item_path(item) %></button>
+          <button type="button"><%= link_to "Delete Item!", item_path(item), method: :delete, data: { confirm: "Are you sure?" }  %></button>
+      </div>
+    <% end %>
   </div>
-</section>
-
-
-
-
-<section>
-  <div class="dashboard-container">
-    <div class="dashboard-header">
-      MY ITEMS
-      <div>
-        <%= link_to "Rent out stuff", new_item_path %>
-     </div>
-
-    <div class="cards">
-      <% @items.each do |item|  %>
-        <div class="card-item">
-          <h5><%= item.category %> : <%= item.title %></h5>
-          <h6><%= item.description %>.</h6>
-
-            <% if currently_booked(item) == true %>
-              <i class="fas fa-dollar-sign not-available"> Item booked | Making $ </i>
-            <% elsif currently_booked(item) == false  %>
-              <i class="fas fa-circle available"> Currently not booked </i>
-            <% end %>
-            <br>
-            <button type="button"><%= link_to "Edit!", edit_item_path(item) %></button>
-            <button type="button"><%= link_to "Delete Item!", item_path(item), method: :delete, data: { confirm: "Are you sure?" }  %></button>
-        </div>
-      <% end %>
-    </div>
-
-
-    </div>
   </div>
-
-</section>
+</div>
 
 
 

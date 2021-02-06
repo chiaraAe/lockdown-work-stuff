@@ -1,0 +1,21 @@
+.bookings-container {
+  width: 100%;
+  margin: 3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.my-bookings {
+  width: 50%;
+}
+
+.my-items {
+  width: 50%;
+}
+
+.booking-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: $spacer * 2;
+  margin-right: 3.5rem;
+}
