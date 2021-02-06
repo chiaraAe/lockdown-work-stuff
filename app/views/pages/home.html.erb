@@ -1,6 +1,10 @@
 <%= render 'banner' %>
 
-<section class="search-result" style="display: <%= @show_result_div %>;">
+<section class="sorry" style="display: <%= @show_sorry %>;">
+  <h2><%= @sorry %></h2>
+</section>
+
+<section class="search-result" style="display: <%= @show_result_sec %>;">
   <h2><%= @text %></h2>
   <div class="cards">
   <% @search_result.each do |item|  %>

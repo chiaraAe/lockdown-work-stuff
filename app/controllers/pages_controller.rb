@@ -9,17 +9,18 @@ class PagesController < ApplicationController
       "
       @search_result = Item.where(sql_query, query: "%#{params[:query]}%")
       if @search_result.length >= 1
-        @show_result_div = 'true'
+        @show_result_sec = 'true'
         @text = "You want #{params[:query]}? We got #{params[:query]}!"
       else
-        @show_result_div = 'none'
-        @text = "Sorry, we don't offer #{params[:query]} yet."
+        @show_result_sec = 'none'
+        @show_sorry = 'true'
+        @sorry = "Sorry, we don't offer #{params[:query]} yet."
       end
 
     else
       @search_result = {}
       @text = nil
-      @show_result_div = 'none'
+      @show_result_sec = 'none'
     end
   end
 end
