@@ -1,32 +1,25 @@
-<!-- <div class="banner-items" style="background: url('https://source.unsplash.com/800x600/?office,desk'); background-repeat: no-repeat; background-size: cover"> -->
-<div>
-<!--   <div class="banner-items" style="background: url('<%= cl_image_tag @item.photos.first.key %>'); background-repeat: no-repeat; background-size: cover"> -->
-<%= cl_image_tag @item.photos.first.key, crop: :fill,  height: 600, width: 800, style: "background-repeat: background: no-repeat; background-size: cover", class: "banner-items" %>
-  </div>
-  <!-- <img src="https://source.unsplash.com/300x150/?office,desk"> -->
-<!-- </div> -->
+<% @item.photos.each do |photo|  %>
+<div class="banner-items" style="background-image: url('<%= cl_image_path photo.key %>'); background-size:cover; background-position: center">
+  <h1><%= @item.title %></h1>
+</div>
+<% end %>
 
-<div class="row">
+
+<div class="row" style="margin-bottom: 100px;">
   <div class="d-flex align-items-center">
-<!--     <img class="thumbnails-img" src="https://source.unsplash.com/200x100/?office,desk">
-    <img class="thumbnails-img" src="https://source.unsplash.com/200x100/?office,chair">
-    <img class="thumbnails-img" src="https://source.unsplash.com/200x100/?office,lamp">
-    <img class="thumbnails-img" src="https://source.unsplash.com/200x100/?office,lamp"> -->
-
-        <% if @item.photos.attached? %>
+    <% if @item.photos.attached? %>
       <% @item.photos.each do |photo|  %>
-      <%= cl_image_tag photo.key, height: 100, width: 200, crop: :fill, class: "thumbnails-img" %>
-        <% end %>
+        <%= cl_image_tag photo.key, height: 100, width: 200, crop: :thumb, class: "thumbnails-img" %>
       <% end %>
+    <% end %>
   </div>
 </div>
 
   <!-- <div class="avatar"></div> -->
 
-<div class="container py-5 mb-10">
+<div class="container py-15 m-10">
   <div class="row">
-     <div class="col-md-8">      
-     
+     <div class="col-md-6">
      <div>
         <h4><%= @item.title %></h4>
           <h6><%= @item.description %></h6>
@@ -34,10 +27,8 @@
         </div>
       </div>
 
-    <div class="col-md-4">
+    <div class="col-md-6">
       <div>
-       <!--  <h6>How long do you need it?</h6>
-        <p> We calculate the price based on the duration</p> -->
         <%= render 'bookings/booking-form' %>
       </div>
     </div>
